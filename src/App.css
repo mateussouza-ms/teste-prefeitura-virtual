@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 }
@@ -6,13 +10,18 @@ html {
   width: 100vw;
 }
 
-.App {
-  width: 100%;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
   list-style: none;
   display: flex;
+}
+
+.App {
+  width: 100%;
 }
 
 .menu-top {
@@ -65,16 +74,133 @@ header .logo {
   width: 30px;
 }
 
-header ul {
+header .navbar {
   list-style: none;
   display: flex;
   gap: 2rem;
   justify-self: flex-end;
+  margin: 0;
+  border-bottom: 1px solid #e5e8ed;
 }
 
-header ul li:hover {
+header .navbar .nav-label {
+  padding: 24px 0;
+  display: block;
+}
+
+header .navbar li:hover {
   color: #0000c5;
   cursor: pointer;
+}
+
+header .navbar > li > span.expanded + .submenu {
+  visibility: visible;
+  opacity: 1;
+}
+
+header .navbar .submenu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 3rem 4rem;
+  align-items: initial;
+  transform: translateY(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+header .navbar .submenu h4 {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #031b4e;
+}
+
+header .navbar .submenu .participate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+header .navbar .submenu .participate svg {
+  width: 30px;
+  height: 30px;
+  color: #0069ff;
+}
+
+header .navbar .submenu ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header .navbar .submenu ul li {
+  cursor: default;
+}
+
+header .navbar .submenu .participate ul li {
+  padding: 1rem;
+}
+
+header .navbar .submenu .participate ul li a {
+  display: flex;
+  gap: 1rem;
+
+  text-decoration: none;
+}
+
+header .navbar .submenu .participate .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+header .navbar .submenu .participate .content .title {
+  color: #2b3240;
+  font-weight: 600;
+}
+
+header .navbar .submenu .participate ul li a:hover .content .title {
+  color: #0069ff;
+}
+
+header .navbar .submenu .participate .content .description {
+  margin: 0;
+  color: #5b6987;
+}
+
+header .navbar .submenu .participate ul li a:hover .content .description {
+  color: #0069ff;
+}
+
+header .navbar .submenu .build {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+header .navbar .submenu .build svg {
+  width: 16px;
+  height: 16px;
+  color: #0069ff;
+}
+
+header .navbar .submenu .build ul {
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+header .navbar .submenu .build ul li {
+  padding: 0.5rem;
+  color: #5b6987;
+}
+
+header .navbar .submenu .build ul li a:hover {
+  color: #0069ff;
 }
 
 header button.search {
@@ -83,6 +209,7 @@ header button.search {
   padding: 0.5rem;
   border-radius: 5px;
   cursor: pointer;
+  height: auto;
 }
 
 header button.sign-up {

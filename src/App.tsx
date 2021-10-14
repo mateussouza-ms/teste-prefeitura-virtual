@@ -3,6 +3,7 @@ import "./App.css";
 
 import digitalOceanLogo from "./assets/images/logo.svg";
 import { Card } from "./components/Card";
+import { Icons } from "./components/Icons.index";
 import { api } from "./services/api";
 
 type FeaturedContent = {
@@ -56,20 +57,154 @@ function App() {
               alt="digitalOcean logo"
             />
           </a>
-          <span>Comunity</span>
+          <span>Community</span>
 
           <ul className="navbar">
-            <li>Tutorials</li>
-            <li>Questions</li>
-            <li>Tech Talks</li>
-            <li>Get Involved</li>
+            <li>
+              <a
+                className="nav-label"
+                href="https://www.digitalocean.com/community/tutorials"
+              >
+                Tutorials
+              </a>
+            </li>
+            <li>
+              <a
+                className="nav-label"
+                href="https://www.digitalocean.com/community/questions"
+              >
+                Questions
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="nav-label"
+                href="https://www.digitalocean.com/community/tags/tech-talks"
+              >
+                Tech Talks
+              </a>
+            </li>
+            <li>
+              <span
+                className="nav-label"
+                onClick={(e) => {
+                  const element = e.target as HTMLElement;
+                  if (element.classList.contains("expanded")) {
+                    element.classList.remove("expanded");
+                  } else {
+                    element.classList.add("expanded");
+                  }
+                }}
+              >
+                Get Involved
+              </span>
+
+              <div className="submenu">
+                <section className="participate">
+                  <h4>PARTICIPATE</h4>
+                  <ul>
+                    <li>
+                      <a href="https://www.digitalocean.com/community/pages/hub-for-good">
+                        <div className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                          >
+                            <use xlinkHref="#navbar-hubforgood"></use>
+                          </svg>
+                        </div>
+                        <div className="content">
+                          <span className="title">Hollie's Hub for Good</span>
+                          <p className="description">
+                            Supporting each other to make an impact
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://www.digitalocean.com/community/pages/write-for-digitalocean">
+                        <div className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                          >
+                            <use xlinkHref="#navbar-write4do"></use>
+                          </svg>
+                        </div>
+                        <div className="content">
+                          <span className="title">Write for DigitalOcean</span>
+                          <p className="description">
+                            You get paid, we donate to tech non-profits.
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://hacktoberfest.digitalocean.com/">
+                        <div className="icon">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                          >
+                            <use xlinkHref="#navbar-hacktoberfest"></use>
+                          </svg>
+                        </div>
+                        <div className="content">
+                          <span className="title">Hacktoberfest</span>
+                          <p className="description">
+                            Contribute to Open Source
+                          </p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </section>
+
+                <section className="build">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                    >
+                      <use xlinkHref="#navbar-build"></use>
+                    </svg>
+                    <h4>Build with DigitalOcean</h4>
+                  </div>
+
+                  <ul>
+                    <li>
+                      <a href="http://">Community Tools and Integrations</a>
+                    </li>
+
+                    <li>
+                      <a href="http://">Hatch Startup Program</a>
+                    </li>
+
+                    <li>
+                      <a href="http://">Marketplace Partner Program</a>
+                    </li>
+
+                    <li>
+                      <a href="http://">Presentation Grants</a>
+                    </li>
+
+                    <li>
+                      <a href="http://">DigitalOcean on GitHub</a>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </li>
           </ul>
         </div>
 
         <div>
           <button className="search">
             {/* <img src="" alt="Ícone de pesquisa" className="search-icon" /> */}
-            <span>Search Comunity</span>
+            <span>Search Community</span>
           </button>
           <button className="sign-up">Sign Up</button>
         </div>
@@ -130,6 +265,8 @@ function App() {
           </div>
         </section>
       </main>
+
+      <Icons />
     </div>
   );
 }
