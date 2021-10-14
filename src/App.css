@@ -1,38 +1,197 @@
+body {
+  margin: 0;
+}
+
+html {
+  width: 100vw;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  list-style: none;
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menu-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  color: #5b6987;
+  padding: 0 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu-top div {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-top .badge {
+  color: #031b4e;
+  background-color: #00d7d2;
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+}
+
+.menu-top ul {
+  gap: 1rem;
+  justify-self: flex-end;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  font-weight: 500;
+}
+
+header div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+header .logo {
+  height: 29px;
+  width: 30px;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-self: flex-end;
+}
+
+header ul li:hover {
+  color: #0000c5;
+  cursor: pointer;
+}
+
+header button.search {
+  background-color: #f3f5f9;
+  border: 1px solid #d2d3d6;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header button.sign-up {
+  background-color: #0069ff;
+  border: 0;
+  padding: 0.7rem;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popular-topics {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.popular-topics ul {
+  gap: 1rem;
+  padding: 0;
+}
+
+.popular-topics ul li a {
+  text-decoration: none;
+  color: rgb(44, 44, 44);
+}
+
+main .banner {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+main .banner .background {
+  background-image: url("https://www.digitalocean.com/assets/community/community_hero-da9b609fe076da1123ffbd80d369b564017ef8080c4fe3511fe03a5a7ce675a3.jpg");
+  height: 446px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+main .banner .background .content {
+  max-width: 60%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main .banner .background .content span,
+h2,
+p {
+  text-align: center;
+}
+
+main .banner .background .content h2 {
+  font-size: 3rem;
+}
+
+main .banner .background .content p {
+  font-size: 1.5rem;
+}
+
+main .banner .box-have-question {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  color: #031b4e;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 800px;
+  transform: translateY(-80px);
+  max-width: 50%;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+main .box-have-question .btn-ask-question {
+  background: #fff;
+  border: 1px solid #0069ff;
+  height: 50px;
+  width: 160px;
+  border-radius: 3px;
+  color: #0069ff;
+  font-weight: 800;
+
+  transition: background-color 0.2s;
+}
+
+main .box-have-question .btn-ask-question:hover {
+  cursor: pointer;
+  background: #0069ff;
+  color: #fff;
+}
+
+.featured-content {
+  margin-top: -80px;
+  padding: 2rem;
+}
+
+.featured-content .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

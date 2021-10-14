@@ -1,0 +1,30 @@
+#card {
+  padding: 1rem;
+  width: 310px;
+}
+
+#card a {
+  text-decoration: none;
+  color: #46536f;
+  font-size: 1.2rem;
+}
+
+#card img {
+  width: 100%;
+}
+
+#card h3,
+h2,
+p {
+  text-align: left;
+}
+
+#card h3 {
+  color: #0069ff;
+  font-size: 1rem;
+}
+
+#card h2 {
+  color: #031b4e;
+  font-size: 1.4rem;
+}
